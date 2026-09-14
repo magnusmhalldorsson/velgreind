@@ -1,19 +1,20 @@
-<!doctype html>
-<html lang="is">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<title>Vélgreind</title>
-<style>
-  body{margin:0;padding:4rem 1.25rem;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-       font-size:18px;line-height:1.6;background:#fbfaf7;color:#1c1e1d}
-  @media (prefers-color-scheme:dark){body{background:#14171a;color:#e6e9e7}}
-  .wrap{max-width:42rem;margin:0 auto}
-</style>
-</head>
-<body><div class="wrap">
-<h1>Vélgreind</h1>
-<p>Í smíðum. / Under construction.</p>
-</div></body>
-</html>
+---
+layout: default
+---
+<p class="lede">Short public summaries of what is happening in my AI-related work at
+Reykjavik University, posted one at a time as each reaches a reportable state.
+Own positions, public outputs and outlines; nothing from behind closed doors.</p>
+
+{% if site.posts.size == 0 %}
+<p class="meta">Nothing here yet. The first dispatch is on its way.</p>
+{% else %}
+{% for post in site.posts %}
+{% assign t = site.data.topics[post.topic] %}
+<article class="entry">
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p class="meta">{{ post.date | date: "%-d %B %Y" }}{% if t %} · <a href="{{ '/efni/' | append: post.topic | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}</p>
+  {{ post.excerpt }}
+  <p class="meta"><a href="{{ post.url | relative_url }}">Read the dispatch</a></p>
+</article>
+{% endfor %}
+{% endif %}

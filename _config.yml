@@ -1,0 +1,19 @@
+title: Vélgreind
+tagline: Dispatches on AI work at Reykjavik University
+author: Magnús M. Halldórsson
+url: "https://xn--vlgreind-b1a.magnusmh.is"
+lang: en
+timezone: Atlantic/Reykjavik
+
+markdown: kramdown
+permalink: /:year/:month/:title/
+plugins:
+  - jekyll-feed
+feed:
+  path: feed.xml
+
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]

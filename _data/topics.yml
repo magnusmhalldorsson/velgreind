@@ -1,0 +1,17 @@
+# The five fixed topics. Keys are the values used in a post's `topic:` field
+# and in the topic page paths under /efni/. Do not rename a key once a post uses it.
+town-hall:
+  name: Town-hall meeting
+  blurb: The town-hall meeting on AI and university education, 7 August 2026.
+orientation:
+  name: Orientation
+  blurb: Orientation sessions on AI for departments and instructors.
+hofi:
+  name: HOFI
+  blurb: Hugsun og færni í tölvunarfræði, a first-year course taught as a Thinking Classroom.
+namsrad:
+  name: Curriculum Council
+  blurb: Námsráð HR, the university-wide curriculum council.
+vefur:
+  name: Web audits
+  blurb: Automated checks of the university's public web pages.

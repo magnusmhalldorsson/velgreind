@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% assign t = site.data.topics[page.topic] %}
+<h1>{{ t.name }}</h1>
+<p class="lede">{{ t.blurb }}</p>
+{{ content }}
+{% assign posts = site.posts | where: "topic", page.topic %}
+{% if posts.size == 0 %}
+<p class="meta">Nothing here yet.</p>
+{% else %}
+<ul class="posts">
+{% for post in posts %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+      <span class="meta">{{ post.date | date: "%-d %B %Y" }}</span></li>
+{% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,39 @@
+:root {
+  --bg:#fbfaf7; --fg:#1c1e1d; --soft:#5b625f; --faint:#8d9591;
+  --rule:#dcdcd6; --link:#1a5f52; --mark:#f0ede4;
+  --serif: "Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14171a; --fg:#e6e9e7; --soft:#a3adaa; --faint:#77817e;
+  --rule:#2b3134; --link:#63c3ae; --mark:#1e2427;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);
+     font-size:18px;line-height:1.6;padding:clamp(1.5rem,5vw,4rem) 1.25rem 6rem}
+.wrap{max-width:42rem;margin:0 auto}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(128,128,128,.35)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+header{border-bottom:2px solid var(--fg);padding-bottom:1rem;margin-bottom:2rem}
+.site{font-size:2.1rem;margin:0 0 .25rem;letter-spacing:-.02em;line-height:1.1;font-weight:700}
+.site a{color:inherit;border:0}
+.role{font-family:var(--sans);font-size:.95rem;color:var(--soft);margin:0}
+nav{font-family:var(--sans);font-size:.85rem;margin-top:.9rem;display:flex;
+    flex-wrap:wrap;gap:.25rem 1.1rem}
+h1{font-size:1.7rem;margin:0 0 .3rem;letter-spacing:-.015em;line-height:1.2}
+h2{font-size:1.3rem;margin:2.2rem 0 .3rem;line-height:1.25}
+.entry h2 a{color:inherit;border:0}
+.entry h2 a:hover{color:var(--link)}
+h3{font-family:var(--sans);font-size:.72rem;text-transform:uppercase;
+   letter-spacing:.15em;color:var(--faint);font-weight:700;
+   margin:2rem 0 .6rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}
+p{margin:0 0 1rem}
+ul,ol{margin:0 0 1rem;padding-left:1.15rem}
+li{margin-bottom:.4rem}
+blockquote{margin:0 0 1rem;padding-left:1rem;border-left:3px solid var(--rule);color:var(--soft)}
+.lede{font-size:1.05rem}
+.meta{font-family:var(--sans);font-size:.82rem;color:var(--faint)}
+.posts{list-style:none;padding:0}
+.entry{margin-bottom:2.5rem}
+footer{margin-top:4rem;padding-top:1rem;border-top:1px solid var(--rule);
+       font-family:var(--sans);font-size:.8rem;color:var(--faint)}
