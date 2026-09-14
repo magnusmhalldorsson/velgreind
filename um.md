@@ -1,10 +1,9 @@
 ---
-layout: default
+layout: page
 title: About
 permalink: /um/
 ---
 
-# About
 
 I am a professor of computer science at Reykjavik University. Most of my career has been
 in the theory of algorithms, and that work has its own home at

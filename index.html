@@ -10,16 +10,24 @@ Own positions, public outputs and outlines; nothing from behind closed doors.</p
 {% else %}
 {% assign used = site.posts | map: "topic" | uniq %}
 {% if used.size > 1 %}
-<p class="meta">Topics so far:
+<p class="meta" style="margin-top:1rem">Topics so far:
 {% for k in used %}{% assign t = site.data.topics[k] %}{% if t %}<a href="{{ '/efni/' | append: k | append: '/' | relative_url }}">{{ t.name }}</a>{% unless forloop.last %} · {% endunless %}{% endif %}{% endfor %}</p>
 {% endif %}
+{% assign total = site.posts.size %}
 {% for post in site.posts %}
 {% assign t = site.data.topics[post.topic] %}
-<article class="entry">
-  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  <p class="meta">{{ post.date | date: "%-d %B %Y" }}{% if t %} · <a href="{{ '/efni/' | append: post.topic | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}</p>
-  {{ post.excerpt }}
-  <p class="meta"><a href="{{ post.url | relative_url }}">Read the dispatch</a></p>
+{% assign n = total | minus: forloop.index0 | prepend: "00" | slice: -3, 3 %}
+<article class="entry row">
+  <div class="side">
+    <span class="num">{{ n }}</span>
+    <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+    {% if t %}<a class="topic" href="{{ '/efni/' | append: post.topic | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}
+  </div>
+  <div class="main">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    {{ post.excerpt }}
+    <p><a class="more" href="{{ post.url | relative_url }}">Read the dispatch</a></p>
+  </div>
 </article>
 {% endfor %}
 {% endif %}

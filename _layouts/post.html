@@ -2,10 +2,17 @@
 layout: default
 ---
 {% assign t = site.data.topics[page.topic] %}
-<article>
-  <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date: "%-d %B %Y" }}{% if t %} · <a href="{{ '/efni/' | append: page.topic | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}</p>
-  {{ content }}
-  <p class="meta colophon">Drafted with Claude from my notes and scripts; read, corrected and signed off by me.
-  Published {{ page.date | date: "%-d %B %Y" }}.</p>
+{% for p in site.posts reversed %}{% if p.url == page.url %}{% assign n = forloop.index | prepend: "00" | slice: -3, 3 %}{% endif %}{% endfor %}
+<article class="row">
+  <div class="side">
+    <span class="num">{{ n }}</span>
+    <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+    {% if t %}<a class="topic" href="{{ '/efni/' | append: page.topic | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}
+  </div>
+  <div class="main">
+    <h1>{{ page.title }}</h1>
+    <div class="prose">{{ content }}</div>
+    <p class="meta colophon">Drafted with Claude from my notes and scripts; read, corrected and signed off by me.
+    Published {{ page.date | date: "%-d %B %Y" }}.</p>
+  </div>
 </article>
