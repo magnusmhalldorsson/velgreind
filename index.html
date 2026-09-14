@@ -8,6 +8,11 @@ Own positions, public outputs and outlines; nothing from behind closed doors.</p
 {% if site.posts.size == 0 %}
 <p class="meta">Nothing here yet. The first dispatch is on its way.</p>
 {% else %}
+{% assign used = site.posts | map: "topic" | uniq %}
+{% if used.size > 1 %}
+<p class="meta">Topics so far:
+{% for k in used %}{% assign t = site.data.topics[k] %}{% if t %}<a href="{{ '/efni/' | append: k | append: '/' | relative_url }}">{{ t.name }}</a>{% unless forloop.last %} · {% endunless %}{% endif %}{% endfor %}</p>
+{% endif %}
 {% for post in site.posts %}
 {% assign t = site.data.topics[post.topic] %}
 <article class="entry">

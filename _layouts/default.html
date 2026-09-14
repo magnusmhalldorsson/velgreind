@@ -17,8 +17,7 @@
   <p class="role">{{ site.author }} · {{ site.tagline }}</p>
   <nav>
     <a href="{{ '/' | relative_url }}">Dispatches</a>
-    {% for t in site.data.topics %}<a href="{{ '/efni/' | append: t[0] | append: '/' | relative_url }}">{{ t[1].name }}</a>
-    {% endfor %}<a href="{{ '/um/' | relative_url }}">About</a>
+    <a href="{{ '/um/' | relative_url }}">About</a>
     <a href="{{ '/feed.xml' | relative_url }}">Feed</a>
   </nav>
 </header>
@@ -27,6 +26,8 @@
 
 <footer>
   Magnús M. Halldórsson, Reykjavik University.
+  Dispatches are drafted with Claude and checked and signed off by me before they appear;
+  see <a href="{{ '/um/' | relative_url }}">About</a>.
   The theory side of my work is at <a href="https://magnusmh.is">magnusmh.is</a>.
 </footer>
 

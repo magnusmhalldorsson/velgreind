@@ -19,6 +19,13 @@ reaches a state worth reporting. The rule for what appears is simple: my own pos
 public outputs, and outlines. Nothing from behind closed doors, and colleagues only get a
 nod.
 
+## How these are written
+
+The dispatches are drafted with Claude, Anthropic's AI assistant, working from my own
+notes, scripts and records. I read every draft, correct it, and sign it off before it
+appears; nothing is published that I have not been through. The positions are mine, the
+first draft usually is not, and I would rather say so than have it inferred.
+
 ## Why "vélgreind"
 
 The usual Icelandic word for artificial intelligence is *gervigreind*, where *gervi-*
