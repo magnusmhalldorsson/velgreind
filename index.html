@@ -25,7 +25,7 @@ Own positions, public outputs and outlines; nothing from behind closed doors.</p
   </div>
   <div class="main">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    {{ post.excerpt }}
+    {% if post.description %}<p>{{ post.description }}</p>{% else %}{{ post.excerpt }}{% endif %}
     <p><a class="more" href="{{ post.url | relative_url }}">Read the dispatch</a></p>
   </div>
 </article>

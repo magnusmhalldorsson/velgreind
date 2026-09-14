@@ -57,6 +57,10 @@ nav a[aria-current]{color:var(--fg);border-bottom-color:var(--link)}
 .side a{color:inherit}
 .side a:hover{color:var(--link)}
 
+/* the abstract under a post's title */
+.summary{font-size:1.02rem;line-height:1.55;color:var(--soft);margin:0 0 1.6rem;
+         padding-bottom:1.4rem;border-bottom:1px solid var(--rule)}
+
 /* entries and posts */
 .entry h2,article h1{font-size:clamp(1.5rem,3vw,1.9rem);font-weight:600;letter-spacing:-.02em;
                      line-height:1.2;margin:0 0 .8rem}

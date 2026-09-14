@@ -17,3 +17,4 @@ defaults:
     values: {layout: post}
 
 exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+
