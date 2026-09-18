@@ -17,7 +17,7 @@
 {% assign latest = site.posts.first %}
 {% if page.layout == "post" %}{% for p in site.posts reversed %}{% if p.url == page.url %}{% assign pnum = forloop.index | prepend: "00" | slice: -3, 3 %}{% endif %}{% endfor %}{% endif %}
 <div class="topbar">
-  <span><a href="{{ '/' | relative_url }}">vélgreind.magnusmh.is</a></span>
+  <span><a href="{{ '/' | relative_url }}">velgreind.magnusmh.is</a></span>
   <span>{% if page.layout == "post" %}dispatch {{ pnum }} — {{ page.date | date: "%Y-%m-%d" }}{% elsif latest %}dispatches · {{ site.posts.size | prepend: "00" | slice: -3, 3 }} so far — latest {{ latest.date | date: "%Y-%m-%d" }}{% else %}dispatches{% endif %}</span>
 </div>
 
